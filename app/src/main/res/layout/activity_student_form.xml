@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.StudentFormActivity">
+
+    <TextView
+        android:id="@+id/tv_fistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="First Name"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_fistName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:lines="1"
+        android:maxLength="50"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_fistName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fistName" />
+
+    <TextView
+        android:id="@+id/lName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Last Name"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_fistName"
+        app:layout_constraintTop_toBottomOf="@id/et_fistName" />
+
+    <EditText
+        android:id="@+id/LastName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        app:layout_constraintEnd_toEndOf="@id/et_fistName"
+        app:layout_constraintStart_toStartOf="@+id/et_fistName"
+        app:layout_constraintTop_toBottomOf="@+id/lName" />
+
+    <TextView
+        android:id="@+id/tv_marital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Marital"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/LastName"
+        app:layout_constraintTop_toBottomOf="@id/LastName" />
+
+    <Spinner
+        android:id="@+id/Marital"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/LastName"
+        app:layout_constraintStart_toStartOf="@+id/LastName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_marital" />
+
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Gender"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/Marital"
+        app:layout_constraintTop_toBottomOf="@+id/Marital" />
+
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="@+id/Marital"
+        app:layout_constraintStart_toStartOf="@id/tv_gender"
+        app:layout_constraintTop_toBottomOf="@id/tv_gender">
+
+        <RadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/rb_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="insert Data"
+        app:layout_constraintEnd_toEndOf="@+id/Marital"
+        app:layout_constraintEnd_toStartOf="@+id/retrieve"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
+
+    <Button
+        android:id="@+id/retrieve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Retrieve Data"
+        app:layout_constraintBottom_toBottomOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Delete Data"
+        app:layout_constraintEnd_toEndOf="@+id/submit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/submit"
+        app:layout_constraintTop_toBottomOf="@+id/submit" />
+
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Update Data"
+        app:layout_constraintBottom_toBottomOf="@+id/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintTop_toBottomOf="@+id/retrieve" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/studentData"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Marital"
+        app:layout_constraintStart_toStartOf="@+id/tv_gender"
+        app:layout_constraintTop_toBottomOf="@+id/btn_showData" />
+
+    <Button
+        android:id="@+id/btn_showData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Data"
+        app:layout_constraintEnd_toStartOf="@+id/update"
+        app:layout_constraintStart_toEndOf="@+id/delete"
+        app:layout_constraintTop_toBottomOf="@+id/update" />
+</androidx.constraintlayout.widget.ConstraintLayout>
